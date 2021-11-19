@@ -1,7 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
-/* html {
-  background-color: #fdd81b;
-} */
+:root {
+  --yellow: #fdd81b;
+  --red: #e5031c;
+  --blue: #50b3c6;
+}
 
 html,
 body {

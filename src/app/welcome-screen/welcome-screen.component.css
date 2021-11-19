@@ -1,24 +1,16 @@
-/* .container-fluid {
-  position: absolute;
-}
-
-h1 {
-  font-size: 108px;
-}
-
 h1,
-h4 {
-  color: #e5031c;
-} */
+p {
+  color: var(--red);
+}
 
-/*
- * Globals
- */
+.footer-text p {
+  color: black;
+}
 
-/* Custom default button */
-.btn-secondary,
-.btn-secondary:hover,
-.btn-secondary:focus {
-  color: #333;
-  text-shadow: none; /* Prevent inheritance from `body` */
+.btn-start {
+  background-color: var(--blue);
+}
+
+.btn-start:hover {
+  background-color: #4597a8;
 }
