@@ -1,0 +1,16 @@
+h1,
+p {
+  color: var(--red);
+}
+
+.footer-text p {
+  color: black;
+}
+
+.btn-start {
+  background-color: var(--blue);
+}
+
+.btn-start:hover {
+  background-color: #4597a8;
+}
