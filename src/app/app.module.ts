@@ -5,19 +5,17 @@ import { AppComponent } from './app.component';
 import { WelcomeScreenComponent } from './welcome-screen/welcome-screen.component';
 import { GameComponent } from './game/game.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeScreenComponent,
     GameComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
