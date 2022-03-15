@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { QuoteService } from '../quote.service';
@@ -12,15 +11,27 @@ import { Quote } from '../quote';
 })
 export class GameComponent implements OnInit {
   quotes: Quote[] = [];
+  headers: string[] = [];
 
-  constructor(private http: HttpClient, private quoteService: QuoteService) {}
+  constructor(private quoteService: QuoteService) {}
 
   ngOnInit(): void {
     this.getQuotes();
   }
 
   getQuotes(): void {
-    this.quoteService.getQuotes().subscribe((quotes) => (this.quotes = quotes));
-    console.log('quotes is: ', this.quotes);
+    // this.quoteService.getQuotes().subscribe((resp) => {
+    //   const keys = resp.headers.keys();
+    //   this.headers = keys.map((key) => `${key}: ${resp.headers.get(key)}`);
+
+    //   this.quotes = { ...resp.body! };
+    //   console.log(this.quotes);
+    // });
+
+    this.quoteService.getQuotes().subscribe((data) => {
+      console.log(data);
+      this.quotes = JSON.parse(JSON.stringify(data.body));
+      console.log(this.quotes);
+    });
   }
 }
