@@ -25,7 +25,6 @@ export class GameComponent implements OnInit {
 
   getQuotes(): void {
     this.quoteService.getRandomQuote().subscribe((data) => {
-      console.log(data);
       let allQuotes = data.body?.quotes;
       if (allQuotes) {
         while (this.quotes.length < 10) {
@@ -33,7 +32,6 @@ export class GameComponent implements OnInit {
           if (Object.keys(Characters).includes(randomQuote.author)) {
             this.quotes.push(randomQuote);
           }
-          console.log(this.quotes);
         }
       }
     });
