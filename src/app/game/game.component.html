@@ -1,6 +1,6 @@
 <p>Just showing all the quotes for now</p>
 <ul>
-  <li *ngFor="let quote of quotes">
-    <h3>{{ quote.quote }}</h3>
+  <li *ngFor="let quote of tenRandomQuotes">
+    <h3>{{ quote.author }}: {{ quote.quote }}</h3>
   </li>
 </ul>

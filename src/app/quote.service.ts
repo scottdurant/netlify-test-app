@@ -11,10 +11,7 @@ export class QuoteService {
 
   constructor(private http: HttpClient) {}
 
-  getRandomQuote(): Observable<HttpResponse<{ quotes: Quote[] }>> {
-    return this.http.get<{ quotes: Quote[] }>(this.quotesUrl, {
-      observe: 'response',
-      responseType: 'json',
-    });
+  getAllQuotes(): Observable<{ quotes: Quote[] }> {
+    return this.http.get<{ quotes: Quote[] }>(this.quotesUrl);
   }
 }

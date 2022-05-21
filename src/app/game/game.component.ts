@@ -15,23 +15,23 @@ enum Characters {
   styleUrls: ['./game.component.css'],
 })
 export class GameComponent implements OnInit {
-  quotes: Quote[] = [];
+  allQuotes: Quote[] = [];
+  tenRandomQuotes: Quote[] = [];
 
   constructor(private quoteService: QuoteService) {}
 
   ngOnInit(): void {
-    this.getQuotes();
+    this.getRandomQuotes();
   }
 
-  getQuotes(): void {
-    this.quoteService.getRandomQuote().subscribe((data) => {
-      let allQuotes = data.body?.quotes;
-      if (allQuotes) {
-        while (this.quotes.length < 10) {
-          let randomQuote = allQuotes[Math.floor(Math.random() * 422)];
-          if (Object.keys(Characters).includes(randomQuote.author)) {
-            this.quotes.push(randomQuote);
-          }
+  getRandomQuotes(): void {
+    // get all quotes and pick out ten random ones from the 4 main characters
+    this.quoteService.getAllQuotes().subscribe((data: { quotes: Quote[] }) => {
+      this.allQuotes = data.quotes;
+      while (this.tenRandomQuotes.length < 10) {
+        let randomQuote = this.allQuotes[Math.floor(Math.random() * 422)];
+        if (Object.keys(Characters).includes(randomQuote.author)) {
+          this.tenRandomQuotes.push(randomQuote);
         }
       }
     });
