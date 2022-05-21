@@ -1,9 +1,8 @@
 <div class="container-fluid h-100">
   <div class="row h-100">
     <div class="col">
-      <p>
-        "What's so great about a mom and pop store? Let me tell you something,
-        if my mom and pop ran a store I wouldn't shop there."
+      <p *ngIf="tenRandomQuotes.length > 0">
+        {{ tenRandomQuotes[index].quote }}
       </p>
     </div>
   </div>
@@ -32,6 +31,8 @@
     </div>
   </div>
   <div class="row h-100">
-    <div class="col">back 1 of 10 next</div>
+    <div class="col">
+      <i class="fa-solid fa-angles-up"></i>
+    </div>
   </div>
 </div>

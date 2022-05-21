@@ -15,8 +15,9 @@ enum Characters {
   styleUrls: ['./game.component.css'],
 })
 export class GameComponent implements OnInit {
-  allQuotes: Quote[] = [];
+  private allQuotes: Quote[] = [];
   tenRandomQuotes: Quote[] = [];
+  index: number = 0;
 
   constructor(private quoteService: QuoteService) {}
 

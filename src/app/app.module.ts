@@ -6,6 +6,7 @@ import { WelcomeScreenComponent } from './welcome-screen/welcome-screen.componen
 import { GameComponent } from './game/game.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
     GameComponent,
     PageNotFoundComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FontAwesomeModule],
   providers: [],
   bootstrap: [AppComponent],
 })
