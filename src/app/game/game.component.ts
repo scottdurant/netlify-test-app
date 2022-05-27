@@ -18,6 +18,7 @@ export class GameComponent implements OnInit {
   private allQuotes: Quote[] = [];
   tenRandomQuotes: Quote[] = [];
   index: number = 0;
+  answers: string[] = [];
 
   constructor(private quoteService: QuoteService) {}
 
@@ -39,7 +40,7 @@ export class GameComponent implements OnInit {
   }
 
   next(): void {
-    if (this.index < 10) {
+    if (this.index < 9) {
       this.index++;
     }
   }
@@ -48,5 +49,11 @@ export class GameComponent implements OnInit {
     if (this.index > 0) {
       this.index--;
     }
+  }
+
+  selectAnswer(character: string): void {
+    this.answers[this.index] = character;
+    this.next();
+    console.log(this.answers);
   }
 }
