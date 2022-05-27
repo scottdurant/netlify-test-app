@@ -32,7 +32,9 @@
   </div>
   <div class="row h-100">
     <div class="col">
-      <i class="fa-solid fa-angles-up"></i>
+      <button class="btn btn-secondary" (click)="back()">Back</button>
+      <span class="question-number">{{ index + 1 }} of 10</span>
+      <button class="btn btn-secondary" (click)="next()">Next</button>
     </div>
   </div>
 </div>

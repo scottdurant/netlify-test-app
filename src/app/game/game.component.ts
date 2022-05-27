@@ -37,4 +37,16 @@ export class GameComponent implements OnInit {
       }
     });
   }
+
+  next(): void {
+    if (this.index < 10) {
+      this.index++;
+    }
+  }
+
+  back(): void {
+    if (this.index > 0) {
+      this.index--;
+    }
+  }
 }
