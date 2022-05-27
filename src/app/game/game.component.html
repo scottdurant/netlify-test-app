@@ -54,5 +54,12 @@
       <span class="question-number">{{ index + 1 }} of 10</span>
       <button class="btn btn-secondary" (click)="next()">Next</button>
     </div>
+    <button
+      class="btn btn-secondary btn-finish"
+      *ngIf="index == 9"
+      (click)="finish()"
+    >
+      Finish
+    </button>
   </div>
 </div>

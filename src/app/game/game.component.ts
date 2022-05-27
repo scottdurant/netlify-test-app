@@ -56,4 +56,8 @@ export class GameComponent implements OnInit {
     this.next();
     console.log(this.answers);
   }
+
+  finish(): void {
+    console.log('finish');
+  }
 }
